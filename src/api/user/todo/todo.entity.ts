@@ -21,7 +21,7 @@ export class Todo extends BaseEntity {
     @UpdateDateColumn({ type: 'timestamp' })
     public updatedAt!: Date;
 
-    @ManyToOne(type => User, user => user.todos)
+    @ManyToOne(() => User, user => user.todos)
     public user: User;
 
 }

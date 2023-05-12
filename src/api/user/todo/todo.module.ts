@@ -8,9 +8,11 @@ import { JwtStrategy } from '../auth/auth.strategy';
 import { LocalStrategy } from '../auth/local.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { JwtAuthGuard } from '../auth/auth.guard';
+import { UserModule } from '../user.module';
+import { User } from '../user.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Todo]), AuthModule, TodoModule],
+  imports: [TypeOrmModule.forFeature([Todo, User]), AuthModule, TodoModule],
   controllers: [TodoController],
   providers: [TodoService]
 })

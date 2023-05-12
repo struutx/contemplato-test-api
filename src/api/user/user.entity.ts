@@ -20,7 +20,7 @@ export class User extends BaseEntity {
     @UpdateDateColumn({ type: 'timestamp' })
     public updatedAt!: Date;
 
-    @OneToMany(type => Todo, todo => todo.user)
-    public todos: Todo[];
+    @OneToMany(() => Todo, todo => todo.user)
+    public todos!: Todo[];
 
 }
